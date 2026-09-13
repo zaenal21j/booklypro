@@ -1,0 +1,15 @@
+<%= form_with url: explore_path, method: :get, class: "search-panel", role: "search" do |form| %>
+  <label class="search-field">
+    <span>Treatment or service</span>
+    <span class="flex items-center gap-3"><%= icon "search", class_name: "size-5 text-copper" %><%= form.text_field :service, placeholder: "Haircut, nails, spa...", class: "search-input" %></span>
+  </label>
+  <label class="search-field">
+    <span>Location</span>
+    <span class="flex items-center gap-3"><%= icon "pin", class_name: "size-5 text-copper" %><%= form.text_field :location, placeholder: "Jakarta or nearby", class: "search-input" %></span>
+  </label>
+  <label class="search-field">
+    <span>Date & time</span>
+    <span class="flex items-center gap-3"><%= icon "calendar", class_name: "size-5 text-copper" %><%= form.text_field :time, placeholder: "Any time", class: "search-input" %></span>
+  </label>
+  <%= form.button "Search", class: "min-h-14 rounded-xl bg-ink px-8 text-sm font-semibold text-white transition hover:bg-charcoal" %>
+<% end %>

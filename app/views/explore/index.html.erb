@@ -1,0 +1,11 @@
+<% content_for :title, "Explore studios — BooklyPro" %>
+<section class="bg-ivory pb-24 pt-32 sm:pt-40">
+  <div class="page-shell">
+    <div class="max-w-3xl"><p class="eyebrow mb-4">Explore beauty & wellness</p><h1 class="font-display text-6xl leading-[.9] tracking-tight sm:text-7xl">Find your next<br><em class="font-light text-copper">beautiful</em> appointment.</h1></div>
+    <div class="mt-10"><%= render "shared/search_controls" %></div>
+    <div class="mt-12 grid gap-10 lg:grid-cols-[15rem_1fr]">
+      <aside class="hidden lg:block"><div class="sticky top-28 space-y-7"><div class="flex items-center justify-between"><h2 class="font-semibold">Filters</h2><%= link_to "Clear all", explore_path, class: "text-xs text-muted hover:text-copper" %></div><%= render "shared/filter_group", title: "Category", options: ["Hair", "Nails", "Facial", "Massage", "Spa", "Makeup"] %><%= render "shared/filter_group", title: "Price range", options: ["Under Rp100.000", "Rp100.000 – Rp250.000", "Above Rp250.000"] %><%= render "shared/filter_group", title: "Rating", options: ["★★★★★", "★★★★☆ and up", "★★★☆☆ and up"] %><%= render "shared/filter_group", title: "Location", options: ["Jakarta Selatan", "Jakarta Pusat", "Jakarta Barat", "Jakarta Timur"] %></div></aside>
+      <div><div class="mb-6 flex items-center justify-between gap-4"><div><p class="text-sm text-muted"><strong class="text-ink">142 studios</strong> found near Jakarta</p></div><div class="flex gap-2"><button class="inline-flex items-center gap-2 rounded-full border border-line bg-white px-4 py-2.5 text-xs font-semibold lg:hidden"><%= icon "filter", class_name: "size-4" %> Filters</button><label class="flex items-center gap-2 rounded-full border border-line bg-white px-4 py-2.5 text-xs font-semibold">Sort by <select class="border-0 bg-transparent p-0 text-xs font-semibold outline-none"><option>Popular</option><option>Rating</option><option>Price</option></select></label></div></div><div class="space-y-4"><% @studios.each do |studio| %><%= render "shared/result_card", studio: studio %><% end %></div></div>
+    </div>
+  </div>
+</section>

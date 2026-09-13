@@ -1,0 +1,15 @@
+<header class="absolute inset-x-0 top-0 z-30 border-b border-white/25">
+  <div class="page-shell flex h-20 items-center justify-between">
+    <%= link_to "BooklyPro", root_path, class: "font-display text-2xl tracking-tight text-ink" %>
+    <nav class="hidden items-center gap-9 lg:flex" aria-label="Primary navigation">
+      <%= link_to "Explore", explore_path, class: "nav-link" %>
+      <%= link_to "Services", root_path(anchor: "services"), class: "nav-link" %>
+      <%= link_to "For Business", root_path(anchor: "business"), class: "nav-link" %>
+      <%= link_to "Pricing", root_path(anchor: "pricing"), class: "nav-link" %>
+    </nav>
+    <div class="flex items-center gap-2 sm:gap-4">
+      <%= link_to "Sign in", "#", class: "hidden rounded-sm text-[15px] font-semibold transition hover:text-copper focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-copper sm:block" %>
+      <%= render "shared/button", label: "Join now", href: "#", style: :primary %>
+    </div>
+  </div>
+</header>

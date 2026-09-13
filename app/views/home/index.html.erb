@@ -1,0 +1,39 @@
+<% content_for :title, "BooklyPro — Beauty, beautifully booked" %>
+
+<section class="relative min-h-[780px] overflow-hidden bg-cream pt-20 lg:min-h-[820px]">
+  <div class="absolute inset-y-0 right-0 hidden w-[48%] lg:block">
+    <%= image_tag "hero-wellness.jpg", alt: "Woman enjoying a quiet beauty ritual", class: "h-full w-full object-cover object-center" %>
+    <div class="absolute inset-0 bg-gradient-to-r from-cream via-cream/10 to-transparent"></div>
+  </div>
+  <div class="absolute -left-28 top-48 size-96 rounded-full bg-champagne/40 blur-3xl"></div>
+  <div class="page-shell relative z-10 flex min-h-[700px] items-center py-16 lg:min-h-[740px]">
+    <div class="w-full lg:w-[62%]">
+      <p class="eyebrow mb-6"><span class="text-copper">✦</span> Beauty & wellness, curated</p>
+      <h1 class="max-w-4xl font-display text-[clamp(3.25rem,8vw,7.75rem)] leading-[.86] tracking-[-.05em] sm:leading-[.84] sm:tracking-[-.055em]">Your time.<br><em class="font-light text-copper">Beautifully</em> spent.</h1>
+      <p class="mt-8 max-w-lg text-base leading-7 text-muted sm:text-lg">Discover exceptional salons, trusted professionals, and treatments that make you feel entirely yourself.</p>
+      <div class="mt-10 lg:mr-[-32vw]"><%= render "shared/search_controls" %></div>
+      <div class="mt-8 flex items-center gap-4 text-xs font-medium text-muted"><div class="flex -space-x-2"><span class="avatar bg-[#a66f57]">A</span><span class="avatar bg-[#606c58]">N</span><span class="avatar bg-[#bd8d69]">S</span></div><p>Loved by 12,000+ beauty seekers</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="border-y border-line bg-white py-12 sm:py-16" id="services">
+  <div class="page-shell">
+    <p class="eyebrow mb-6 text-center sm:mb-7">Find your ritual</p>
+    <div class="no-scrollbar -mx-1 flex justify-between gap-3 overflow-x-auto px-1 pb-1 sm:gap-4"><% @categories.each do |name, icon_name| %><%= render "shared/service_category", name: name, icon_name: icon_name %><% end %></div>
+  </div>
+</section>
+
+<section class="bg-ivory py-20 sm:py-28" id="popular">
+  <div class="page-shell">
+    <%= render "shared/section_heading", eyebrow: "Handpicked for you", title: "Popular near you", description: "Standout studios, chosen for their craft, care, and consistently lovely reviews.", link_text: "Explore all", href: "#" %>
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3"><% @studios.each do |studio| %><%= render "shared/studio_card", studio: studio %><% end %></div>
+  </div>
+</section>
+
+<section class="overflow-hidden bg-clay py-20 sm:py-28">
+  <div class="page-shell grid items-center gap-12 lg:grid-cols-[.9fr_1.1fr]">
+    <div><p class="eyebrow mb-5">A better way to book</p><h2 class="font-display text-5xl leading-[.95] tracking-tight sm:text-6xl">Care for yourself,<br>with less searching.</h2><p class="mt-6 max-w-md leading-7 text-muted">Thoughtful recommendations, verified reviews, and clear pricing. Everything you need to choose with confidence.</p><div class="mt-8"><%= render "shared/button", label: "Find your next appointment", href: "#popular", style: :primary %></div></div>
+    <div class="relative"><%= image_tag "ritual-detail.jpg", alt: "A calm, premium treatment space", class: "aspect-[5/4] w-full rounded-[2.5rem] object-cover shadow-lifted" %><div class="absolute -bottom-6 -left-6 hidden rounded-2xl bg-white p-5 shadow-lifted sm:block"><p class="text-xs text-muted">Next available</p><p class="mt-1 font-display text-xl">Today, 4:30 PM</p></div></div>
+  </div>
+</section>

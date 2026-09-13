@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Manrope:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Manrope", sans-serif;
+  --font-display: "Cormorant Garamond", serif;
+  --color-ivory: #f8f5ef;
+  --color-cream: #f3eee5;
+  --color-sand: #f2ebe1;
+  --color-clay: #e7d8c7;
+  --color-champagne: #d8c1a6;
+  --color-copper: #9b6247;
+  --color-gold: #d79023;
+  --color-ink: #171512;
+  --color-charcoal: #302d29;
+  --color-muted: #6f6a63;
+  --color-line: #ded8cf;
+  --shadow-card: 0 10px 35px rgb(40 29 19 / 0.06);
+  --shadow-soft: 0 12px 30px rgb(40 29 19 / 0.10);
+  --shadow-lifted: 0 24px 70px rgb(40 29 19 / 0.15);
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { min-width: 320px; }
+  a, button { cursor: pointer; }
+  ::selection { background: #d8c1a6; color: #171512; }
+}
+
+@layer components {
+  .page-shell { @apply mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-12; }
+  .eyebrow { @apply text-[11px] font-bold uppercase tracking-[.24em] text-muted; }
+  .nav-link { @apply rounded-sm text-[15px] font-semibold tracking-[-.01em] transition hover:text-copper focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-copper; }
+  .search-panel { @apply grid gap-2 rounded-2xl border border-line bg-white/95 p-2 shadow-lifted backdrop-blur md:grid-cols-3 lg:grid-cols-[1.25fr_1fr_1fr_auto]; }
+  .search-field { @apply flex min-w-0 flex-col gap-2 border-b border-line px-4 py-3 md:border-b-0 md:border-r; }
+  .search-field > span:first-child { @apply text-[10px] font-bold uppercase tracking-wider text-muted; }
+  .search-input { @apply min-w-0 w-full border-0 bg-transparent p-0 text-sm text-ink outline-none placeholder:text-muted/70; }
+  .avatar { @apply grid size-8 place-items-center rounded-full border-2 border-cream text-[10px] font-bold text-white; }
+  .secondary-link { @apply inline-flex items-center gap-2 border-b border-copper/40 pb-1 text-sm font-semibold text-ink transition hover:border-copper hover:text-copper focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-copper; }
+}
+
+@utility no-scrollbar {
+  &::-webkit-scrollbar { display: none; }
+  scrollbar-width: none;
+}

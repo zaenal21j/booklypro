@@ -1,0 +1,12 @@
+<article class="group overflow-hidden rounded-3xl border border-line bg-white shadow-card transition duration-300 hover:-translate-y-1.5 hover:border-champagne hover:shadow-lifted">
+  <div class="relative aspect-[4/3] overflow-hidden">
+    <%= image_tag studio[:image], alt: "Interior of #{studio[:name]}", class: "h-full w-full object-cover transition duration-700 group-hover:scale-105", loading: "lazy" %>
+    <button class="absolute right-4 top-4 grid size-10 place-items-center rounded-full bg-white/90 backdrop-blur transition hover:scale-105 hover:text-copper focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-copper" aria-label="Save <%= studio[:name] %>"><%= icon "heart", class_name: "size-5" %></button>
+    <span class="absolute bottom-4 left-4 rounded-full bg-white/90 px-3 py-1.5 text-xs font-semibold backdrop-blur"><%= studio[:price] %></span>
+  </div>
+  <div class="p-5 sm:p-6">
+    <div class="flex min-h-16 items-start justify-between gap-4"><h3 class="font-display text-[1.7rem] leading-none"><%= studio[:name] %></h3><%= render "shared/rating", rating: studio[:rating], reviews: studio[:reviews] %></div>
+    <p class="mb-5 flex items-center gap-2 text-sm leading-5 text-muted"><%= icon "pin", class_name: "size-4 shrink-0" %><%= studio[:location] %></p>
+    <div class="flex min-h-7 flex-wrap content-start gap-2"><% studio[:tags].each do |tag| %><span class="rounded-full bg-sand px-3 py-1.5 text-xs"><%= tag %></span><% end %></div>
+  </div>
+</article>

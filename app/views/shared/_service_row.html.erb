@@ -1,0 +1,4 @@
+<article class="flex flex-col gap-5 rounded-2xl border border-line bg-white p-5 transition hover:border-champagne hover:shadow-card sm:flex-row sm:items-center">
+  <div class="min-w-0 flex-1"><div class="flex flex-wrap items-baseline gap-x-3"><h3 class="font-semibold"><%= service[:name] %></h3><span class="text-xs text-muted"><%= service[:duration] %></span></div><p class="mt-2 text-sm leading-6 text-muted"><%= service[:description] %></p></div>
+  <div class="flex items-center justify-between gap-6 sm:justify-end"><strong class="whitespace-nowrap text-sm"><%= service[:price] %></strong><%= render "shared/button", label: "Book", href: new_booking_path, style: :primary %></div>
+</article>

@@ -1,0 +1,8 @@
+<div class="mb-8 flex items-end justify-between gap-6">
+  <div>
+    <% if local_assigns[:eyebrow] %><p class="eyebrow mb-3"><%= eyebrow %></p><% end %>
+    <h2 class="font-display text-4xl leading-none tracking-tight sm:text-5xl"><%= title %></h2>
+    <% if local_assigns[:description] %><p class="mt-4 max-w-xl text-sm leading-6 text-muted sm:text-base"><%= description %></p><% end %>
+  </div>
+  <% if local_assigns[:link_text] %><%= link_to "#{link_text} →", href, class: "secondary-link shrink-0" %><% end %>
+</div>

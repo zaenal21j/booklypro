@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   root "home#index"
   get "explore", to: "explore#index"
   get "studios/glow-studio", to: "studios#show", as: :glow_studio

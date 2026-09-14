@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= content_for(:title) || "BooklyPro Business" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="application-name" content="BooklyPro Business">
+    <%= csp_meta_tag %>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+  <body class="bg-[#f2f0eb] text-ink antialiased">
+    <%= yield %>
+  </body>
+</html>

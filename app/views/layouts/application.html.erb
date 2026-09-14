@@ -9,6 +9,7 @@
     <meta name="mobile-web-app-capable" content="yes">
     <%# No state-changing forms are present on this static landing page. %>
     <%= csp_meta_tag %>
+    <%= csrf_meta_tags %>
 
     <%= yield :head %>
 
@@ -26,6 +27,7 @@
 
   <body class="bg-ivory text-ink antialiased">
     <%= render "shared/navbar" %>
+    <% if notice || alert %><div class="fixed left-1/2 top-5 z-50 -translate-x-1/2 rounded-full bg-ink px-5 py-3 text-sm text-white shadow-lifted"><%= notice || alert %></div><% end %>
     <main><%= yield %></main>
     <%= render "shared/footer" %>
   </body>

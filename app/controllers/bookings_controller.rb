@@ -7,12 +7,12 @@ class BookingsController < ApplicationController
       { name: "Hair Treatment", duration: "1 hr", description: "Deep conditioning ritual for softer, healthier-looking hair.", price: "Rp 150.000" }
     ]
     @professionals = [
-      { name: "Any available professional", specialty: "Let Glow Studio match you", note: "Recommended", image: "studio-glow.jpg" },
-      { name: "Maya Putri", specialty: "Senior Hair Artist", note: "Color and precision cuts", image: "studio-glow.jpg" },
-      { name: "Alya Rahman", specialty: "Beauty Specialist", note: "Styling and treatments", image: "studio-luna.jpg" },
-      { name: "Nadia Sari", specialty: "Nail Artist", note: "Minimal nail artistry", image: "studio-noir.jpg" }
+      { name: "Any available professional", specialty: "Let Glow Studio match you", note: "Recommended", image: "/staff-maya.jpg" },
+      { name: "Maya Putri", specialty: "Senior Hair Artist", note: "Color and precision cuts · 4.9 ★", image: "/staff-maya.jpg" },
+      { name: "Alya Rahman", specialty: "Beauty Specialist", note: "Styling and treatments · 4.8 ★", image: "/staff-alya.jpg" },
+      { name: "Nadia Sari", specialty: "Nail Artist", note: "Minimal nail artistry · 4.9 ★", image: "/staff-nadia.jpg" }
     ]
-    @dates = ["Tue 16", "Wed 17", "Thu 18", "Fri 19", "Sat 20", "Sun 21"]
+    @dates = ["30", "31", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30"]
     @times = { "Morning" => ["09:00", "09:45", "10:30", "11:15"], "Afternoon" => ["13:00", "13:45", "15:15", "16:00"] }
   end
 end

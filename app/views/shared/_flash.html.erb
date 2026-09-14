@@ -1,0 +1,7 @@
+<% flash.each do |type, message| %>
+  <div class="pointer-events-auto fixed inset-x-4 top-4 z-50 mx-auto flex max-w-md items-start gap-3 rounded-2xl border border-line bg-white px-4 py-3 text-sm text-ink shadow-soft" role="status">
+    <span class="mt-0.5 size-2 shrink-0 rounded-full <%= type.to_s == "alert" ? "bg-copper" : "bg-ink" %>"></span>
+    <p class="flex-1 leading-6"><%= message %></p>
+    <button type="button" class="text-muted hover:text-ink" onclick="this.closest('[role=status]').remove()" aria-label="Dismiss">&times;</button>
+  </div>
+<% end %>

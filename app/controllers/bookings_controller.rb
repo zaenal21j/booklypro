@@ -7,7 +7,7 @@ class BookingsController < ApplicationController
       { name: "Hair Treatment", duration: "1 hr", description: "Deep conditioning ritual for softer, healthier-looking hair.", price: "Rp 150.000" }
     ]
     @professionals = [
-      { name: "Any available professional", specialty: "Let Glow Studio match you", note: "Recommended", image: "/staff-maya.jpg" },
+      { name: "Any available professional", specialty: "Let Glow Studio match you", note: "Recommended", image: nil },
       { name: "Maya Putri", specialty: "Senior Hair Artist", note: "Color and precision cuts · 4.9 ★", image: "/staff-maya.jpg" },
       { name: "Alya Rahman", specialty: "Beauty Specialist", note: "Styling and treatments · 4.8 ★", image: "/staff-alya.jpg" },
       { name: "Nadia Sari", specialty: "Nail Artist", note: "Minimal nail artistry · 4.9 ★", image: "/staff-nadia.jpg" }
